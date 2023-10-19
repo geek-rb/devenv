@@ -25,7 +25,7 @@ param adminUsername2 string = '-7v7zrTffbF8'
 // subnet
 module subnet_add 'vnet.bicep' = {
   name: 'vnetModule-deployment'
-  scope: resourceGroup(subscription().id, vnetRg)
+  scope: resourceGroup(subscription().subscriptionId, vnetRg)
   params: {
     vnetName: vnetName
     subnetName: subnetName

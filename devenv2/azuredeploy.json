@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.22.6.54827",
-      "templateHash": "6543696291814425495"
+      "templateHash": "18197968807829887484"
     }
   },
   "parameters": {
@@ -69,14 +69,14 @@
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
               "subnet": {
-                "id": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().id, parameters('vnetRg')), 'Microsoft.Resources/deployments', 'vnetModule-deployment'), '2022-09-01').outputs.id.value]"
+                "id": "[reference(extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, parameters('vnetRg')), 'Microsoft.Resources/deployments', 'vnetModule-deployment'), '2022-09-01').outputs.id.value]"
               }
             }
           }
         ]
       },
       "dependsOn": [
-        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().id, parameters('vnetRg')), 'Microsoft.Resources/deployments', 'vnetModule-deployment')]"
+        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', subscription().subscriptionId, parameters('vnetRg')), 'Microsoft.Resources/deployments', 'vnetModule-deployment')]"
       ]
     },
     {
@@ -127,7 +127,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "vnetModule-deployment",
-      "subscriptionId": "[subscription().id]",
+      "subscriptionId": "[subscription().subscriptionId]",
       "resourceGroup": "[parameters('vnetRg')]",
       "properties": {
         "expressionEvaluationOptions": {
