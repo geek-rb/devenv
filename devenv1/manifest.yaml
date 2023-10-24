@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://github.com/Azure/deployment-environments/releases/download/2022-11-11-preview/manifest.schema.json
-name: DevEnv
+name: DevEnv_v1
 version: 1.0.0
 summary: DevEnv App Environment
-description: Deploys DevEnv
+description: Deploys DevEnv v1
 runner: ARM
 templatePath: azuredeploy.json
 
